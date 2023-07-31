@@ -30,7 +30,7 @@ router.get("/logout", (req, res, next) => {
       secure: process.env.NODE_ENV == "development" ? false : true,
         httpOnly: process.env.NODE_ENV =="development" ? false : true,
         sameSite: process.env.NODE_ENV =="development" ? false : "none",
-    }); // Clear the session cookie
+    }); 
     res.status(200).json({
       message:"Loggout Out",
   });
