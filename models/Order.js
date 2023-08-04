@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
  type: String,
  required: true,
  },
- vilage: {
+ village: {
  type: String,
  required: true,
  },
@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
  type: Number,
  required: true,
  },
- phone: {
+ phoneno: {
  type: Number,
  required: true,
  },
