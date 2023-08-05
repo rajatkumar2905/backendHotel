@@ -421,17 +421,7 @@ const schema = new mongoose.Schema({
             required:true,
         },
     },
-    VEGBIRYANI: {
-        price: {
-            type: Number,
-            required: true,
-
-        },
-        quantity:{
-            type:Number,
-            required:true,
-        },
-    },
+   
     VEGTOWERBUGGER: {
         price: {
             type: Number,
@@ -466,17 +456,6 @@ const schema = new mongoose.Schema({
         },
     },
     HIMSPECIALBUGGER: {
-        price: {
-            type: Number,
-            required: true,
-
-        },
-        quantity:{
-            type:Number,
-            required:true,
-        },
-    },
-    ALOOTIKKIBUGGER: {
         price: {
             type: Number,
             required: true,
