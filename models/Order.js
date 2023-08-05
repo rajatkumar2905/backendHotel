@@ -509,17 +509,7 @@ const schema = new mongoose.Schema({
             required:true,
         },
     },
-    SAMOSA: {
-        price: {
-            type: Number,
-            required: true,
-
-        },
-        quantity:{
-            type:Number,
-            required:true,
-        },
-    },
+ 
  },
  user:{
     type: mongoose.Schema.ObjectId,
