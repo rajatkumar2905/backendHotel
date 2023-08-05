@@ -13,7 +13,7 @@ export const placeOrder = asyncError(async (req, res, next) => {
       totalAmount,
     } = req.body;
   
-     const user = req.user.id;
+     const user = req.user._id;
 
     const orderOptions = {
       shippingInfo,
@@ -35,7 +35,7 @@ export const placeOrder = asyncError(async (req, res, next) => {
   
   export const getMyOrders = asyncError(async (req, res, next) => {
     const orders = await Order.find({
-      user: req.user.id,
+      user: req.user._id,
     }).populate("user","name");
   
     res.status(200).json({
