@@ -528,7 +528,7 @@ const schema = new mongoose.Schema({
 
  paymentMethod:{
     type: String,
-    enum:["COD","TAKE AWAY","VISIT TO HOTEL"],
+    enum:["COD","TAKEAWAY","VISITTOHOTEL"],
     default:"COD",
     
  },
