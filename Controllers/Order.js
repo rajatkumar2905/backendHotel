@@ -10,10 +10,10 @@ export const placeOrder = asyncError(async (req, res, next) => {
       itemsPrice,
       taxPrice,
       shippingCharges,
-      totalAmount
+      totalAmount,user,
     } = req.body;
   
-    const user = req.user.id;
+   
 
     const orderOptions = {
       shippingInfo,
@@ -22,7 +22,7 @@ export const placeOrder = asyncError(async (req, res, next) => {
       itemsPrice,
       taxPrice,
       shippingCharges,
-      totalAmount,user,
+      totalAmount,user: user._id,
       
     };
     await Order.create(orderOptions);
