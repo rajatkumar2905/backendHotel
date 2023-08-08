@@ -35,12 +35,11 @@ export const placeOrder = asyncError(async (req, res, next) => {
   const order = await Order.create({
     shippingInfo,
     orderItems,
-    paymentInfo,
+    paymentMethod,
     itemsPrice,
     taxPrice,
-    shippingPrice,
-    totalPrice,
-    paidAt: Date.now(),
+    shippingCharges,
+    totalAmount,
     user: req.user._id,
   });
 
