@@ -13,25 +13,42 @@ export const placeOrder = asyncError(async (req, res, next) => {
       totalAmount,
     } = req.body;
   
-    const user = req.user._id;
+  //   const user = req.user._id;
 
-    const orderOptions = {
-      shippingInfo,
-      orderItems,
-      paymentMethod,
-      itemsPrice,
-      taxPrice,
-      shippingCharges,
-      totalAmount,
-      user,
+  //   const orderOptions = {
+  //     shippingInfo,
+  //     orderItems,
+  //     paymentMethod,
+  //     itemsPrice,
+  //     taxPrice,
+  //     shippingCharges,
+  //     totalAmount,
+  //     user,
       
-    };
-    await Order.create(orderOptions);
-    res.status(201).json({
-      success: true,
-      message: "Order Placed Successfully via Cash On Delivery",
-    });
+  //   };
+  //   await Order.create(orderOptions);
+  //   res.status(201).json({
+  //     success: true,
+  //     message: "Order Placed Successfully via Cash On Delivery",
+  //   });
+  // });
+  const order = await Order.create({
+    shippingInfo,
+    orderItems,
+    paymentInfo,
+    itemsPrice,
+    taxPrice,
+    shippingPrice,
+    totalPrice,
+    paidAt: Date.now(),
+    user: req.user._id,
   });
+
+  res.status(201).json({
+    success: true,
+    order,
+  });
+});
 
   
   export const getMyOrders = asyncError(async (req, res, next) => {
