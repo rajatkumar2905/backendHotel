@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 import passport from "passport";
 import cors from "cors"
+import bodyParser from "body-parser";
 
 const app = express();
 export default app;
@@ -34,6 +35,7 @@ app.use(
     extended: true,
   })
 );
+app.use(bodyParser.json());
 
 app.use(
     cors({
