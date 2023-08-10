@@ -12,7 +12,7 @@ export const placeOrder = asyncError(async (req, res, next) => {
     totalAmount,
   } = req.body;
 
-  const user = req.user.OjbectId;
+  const user = req.user._id;
 
   const orderOptions = {
     shippingInfo,
