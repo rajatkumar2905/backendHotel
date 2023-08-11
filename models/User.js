@@ -13,7 +13,7 @@ const schema = new mongoose.Schema({
     enum: ["admin", "user"],
     default: "user",
   },
-
+  _id: {type:String},
 
   createdAt: {
     type: Date,
